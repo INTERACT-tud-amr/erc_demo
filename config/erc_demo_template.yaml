@@ -64,7 +64,11 @@ windows:
     layout: tiled
     panes:
       - shell_command:
-        - roslaunch object_visualization vicon_objects.launch
+        - source catkin_ws/devel/setup.zsh
+        - export ROS_MASTER_URI=http://localhost:11311
+        - export ROS_IP=IPADDRESS
+        - roslaunch objects_visualization vicon_and_derived_objects.launch topic:=/dingo2/objects
+
 
 
 

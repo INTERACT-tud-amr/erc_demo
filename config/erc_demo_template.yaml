@@ -47,7 +47,7 @@ windows:
       - shell_command:
         - ssh dinova@192.168.0.122
         - export ROS_MASTER_URI=http://IPADDRESS:11311
-        - sleep 2
+        - sleep 5
         - roslaunch dinova_utils object_bundle_dinovas.launch
   - window_name: grasp_planner
     layout: tiled
@@ -55,11 +55,11 @@ windows:
       - shell_command:
         - ssh dinova@192.168.0.121
         - export ROS_MASTER_URI=http://IPADDRESS:11311
-          roslaunch dinova_gomp grasp_planner.launch
+        - roslaunch dinova_gomp grasp_planner.launch
       - shell_command:
         - ssh dinova@192.168.0.122
         - export ROS_MASTER_URI=http://IPADDRESS:11311
-          roslaunch dinova_gomp grasp_planner.launch
+        - roslaunch dinova_gomp grasp_planner.launch
   - window_name: visualization
     layout: tiled
     panes:

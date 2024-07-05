@@ -28,11 +28,11 @@ windows:
       - shell_command:
         - ssh dinova@192.168.0.121
         - export ROS_MASTER_URI=http://IPADDRESS:11311
-        - roslaunch dinova_fabrics_wrapper dinova_pose.launch
+        - roslaunch dinova_fabrics_wrapper dinova_pose.launch lidar:=true with_obstacle:=true
       - shell_command:
         - ssh dinova@192.168.0.121
         - export ROS_MASTER_URI=http://IPADDRESS:11311
-        - roslaunch dinova_fabrics_wrapper dinova_joint_space.launch
+        - roslaunch dinova_fabrics_wrapper dinova_joint_space.launch lidar:=true with_obstacle:=true
       - shell_command:
         - ssh dinova@192.168.0.122
         - export ROS_MASTER_URI=http://IPADDRESS:11311
@@ -40,10 +40,15 @@ windows:
       - shell_command:
         - ssh dinova@192.168.0.122
         - export ROS_MASTER_URI=http://IPADDRESS:11311
-        - roslaunch dinova_fabrics_wrapper dinova_joint_space.launch
+        - roslaunch dinova_fabrics_wrapper dinova_joint_space.launch with_obstacle:=true
   - window_name: utils
     layout: tiled
     panes:
+      - shell_command:
+        - ssh dinova@192.168.0.121
+        - export ROS_MASTER_URI=http://IPADDRESS:11311
+        - sleep 5
+        - roslaunch dinova_utils object_bundle_dinovas.launch
       - shell_command:
         - ssh dinova@192.168.0.122
         - export ROS_MASTER_URI=http://IPADDRESS:11311

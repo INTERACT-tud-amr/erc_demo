@@ -1,0 +1,64 @@
+session_name: erc_demo
+shell_command_before: export DISABLE_AUTO_TITLE='true'
+windows:
+  - window_name: core
+    layout: tiled
+    panes:
+      - shell_command:
+        - source /opt/ros/noetic/setup.zsh
+        - export ROS_MASTER_URI=http://localhost:11311
+        - export ROS_IP=IPADDRESS
+        - roscore
+  - window_name: bringups
+    layout: tiled
+    panes:
+      - shell_command:
+        - ssh dinova@192.168.0.121
+        - sudo systemctl stop ros.service
+        - export ROS_MASTER_URI=http://IPADDRESS:11311
+        - roslaunch dinova_bringup dinova.launch vicon_config_file:=configs/vicon_config_dingo1.yaml lidar:=true
+      - shell_command:
+        - ssh dinova@192.168.0.122
+        - sudo systemctl stop ros.service
+        - export ROS_MASTER_URI=http://IPADDRESS:11311
+        - roslaunch dinova_bringup dinova.launch vicon_config_file:=configs/vicon_config_dingo2.yaml lidar:=false
+  - window_name: fabrics
+    layout: tiled
+    panes:
+      - shell_command:
+        - ssh dinova@192.168.0.121
+        - export ROS_MASTER_URI=http://IPADDRESS:11311
+        - roslaunch dinova_fabrics_wrapper dinova_pose.launch
+      - shell_command:
+        - ssh dinova@192.168.0.121
+        - export ROS_MASTER_URI=http://IPADDRESS:11311
+        - roslaunch dinova_fabrics_wrapper dinova_joint_space.launch
+      - shell_command:
+        - ssh dinova@192.168.0.122
+        - export ROS_MASTER_URI=http://IPADDRESS:11311
+        - roslaunch dinova_fabrics_wrapper dinova_pose.launch with_obstacles:=true
+      - shell_command:
+        - ssh dinova@192.168.0.122
+        - export ROS_MASTER_URI=http://IPADDRESS:11311
+        - roslaunch dinova_fabrics_wrapper dinova_joint_space.launch
+  - window_name: utils
+    layout: tiled
+    panes:
+      - shell_command:
+        - ssh dinova@192.168.0.122
+        - export ROS_MASTER_URI=http://IPADDRESS:11311
+        - sleep 2
+        - roslaunch dinova_utils object_bundle_dinovas.launch
+  - window_name: grasp_planner
+    layout: tiled
+    panes:
+      - shell_command:
+        - ssh dinova@192.168.0.121
+        - export ROS_MASTER_URI=http://IPADDRESS:11311
+          # - roslaunch dinova_gomp grasp_planner.launch
+      - shell_command:
+        - ssh dinova@192.168.0.122
+        - export ROS_MASTER_URI=http://IPADDRESS:11311
+          # - roslaunch dinova_gomp grasp_planner.launch
+
+

@@ -1,0 +1,30 @@
+#!/bin/bash
+# Script to replace IPADDRESS with actual IP address in a file
+#
+
+# Check if the file name is provided
+#
+if [ $# -ne 2 ]; then
+    echo "Usage: $0 template filename"
+    exit 1
+fi
+
+# Check if the file exists
+#
+if [ ! -f $1 ]; then
+    echo "File $1 does not exist"
+    exit 2
+fi
+
+# Get the IP address
+#
+IPADDRESS=$(hostname -I | cut -d' ' -f1)
+echo $IPADDRESS
+
+# Replace IPADDRESS with actual IP address
+#
+sed "s/IPADDRESS/$IPADDRESS/g" $1 > $2
+
+# Done
+
+

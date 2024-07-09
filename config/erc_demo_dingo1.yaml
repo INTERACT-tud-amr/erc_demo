@@ -10,7 +10,7 @@ windows:
     panes:
       - shell_command:
         - sudo systemctl stop ros.service
-        - roslaunch dinova_bringup dinova.launch vicon_config_file:=/home/dinova/configs/vicon_config_dingo1.yaml lidar:=true --wait
+        - roslaunch dinova_bringup dinova.launch lidar:=true --wait
   - window_name: fabrics
     layout: tiled
     panes:

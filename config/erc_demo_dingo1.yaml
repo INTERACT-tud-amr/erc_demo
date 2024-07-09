@@ -30,6 +30,12 @@ windows:
       - shell_command:
         - sleep 15
         - roslaunch dinova_gomp grasp_planner.launch lidar:=true with_obstacles:=true --wait
+   - window_name: node_checking
+     layout: tiled
+     panes: 
+       - shell_command:
+         - cd /home/dinova/dinova_ws/src/erc_demo/scripts
+         - ./nodes_checker
 
 
 

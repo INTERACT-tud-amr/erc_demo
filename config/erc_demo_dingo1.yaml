@@ -1,0 +1,35 @@
+session_name: erc_demo
+windows:
+  - window_name: core
+    layout: tiled
+    panes:
+      - shell_command:
+        - roscore
+  - window_name: bringups
+    layout: tiled
+    panes:
+      - shell_command:
+        - sudo systemctl stop ros.service
+        - roslaunch dinova_bringup dinova.launch vicon_config_file:=/home/dinova/configs/vicon_config_dingo1.yaml lidar:=true --wait
+  - window_name: fabrics
+    layout: tiled
+    panes:
+      - shell_command:
+        - roslaunch dinova_fabrics_wrapper dinova_pose.launch lidar:=true with_obstacles:=true --wait
+      - shell_command:
+        - roslaunch dinova_fabrics_wrapper dinova_joint_space.launch lidar:=true with_obstacles:=true --wait
+  - window_name: utils
+    layout: tiled
+    panes:
+      - shell_command:
+        - sleep 10
+        - roslaunch dinova_utils object_bundle_dinovas.launch --wait
+  - window_name: grasp_planner
+    layout: tiled
+    panes:
+      - shell_command:
+        - sleep 15
+        - roslaunch dinova_gomp grasp_planner.launch lidar:=true with_obstacles:=true --wait
+
+
+

@@ -1,0 +1,46 @@
+session_name: erc_demo
+windows:
+  - window_name: bringups
+    layout: tiled
+    panes:
+      - shell_command:
+        - sudo systemctl stop ros.service
+        - export ROS_MASTER_URI=http://192.168.0.121:11311
+        - export ROS_IP=192.168.0.122
+        - roslaunch dinova_bringup dinova.launch lidar:=false
+  - window_name: fabrics
+    layout: tiled
+    panes:
+      - shell_command:
+        - export ROS_MASTER_URI=http://192.168.0.121:11311
+        - export ROS_IP=192.168.0.122
+        - roslaunch dinova_fabrics_wrapper dinova_pose.launch lidar:=false with_obstacles:=true --wait
+      - shell_command:
+        - export ROS_MASTER_URI=http://192.168.0.121:11311
+        - export ROS_IP=192.168.0.122
+        - roslaunch dinova_fabrics_wrapper dinova_joint_space.launch lidar:=false with_obstacles:=true --wait
+  - window_name: utils
+    layout: tiled
+    panes:
+      - shell_command:
+        - export ROS_MASTER_URI=http://192.168.0.121:11311
+        - export ROS_IP=192.168.0.122
+        - sleep 10
+        - roslaunch dinova_utils object_bundle_dinovas.launch --wait
+  - window_name: grasp_planner
+    layout: tiled
+    panes:
+      - shell_command:
+        - export ROS_MASTER_URI=http://192.168.0.121:11311
+        - export ROS_IP=192.168.0.122
+        - sleep 15
+        - roslaunch dinova_gomp grasp_planner.launch lidar:=false with_obstacles:=true --wait
+  - window_name: node_checking
+    layout: tiled
+    panes:
+      - shell_command:
+        - export ROS_MASTER_URI=http://192.168.0.121:11311
+        - export ROS_IP=192.168.0.122
+        - cd /home/dinova/dinova_ws/src/erc_demo/scripts
+        - ./nodes_checker
+

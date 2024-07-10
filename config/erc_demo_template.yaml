@@ -16,7 +16,7 @@ windows:
         - ssh dinova@192.168.0.121
         - sudo systemctl stop ros.service
         - export ROS_MASTER_URI=http://IPADDRESS:11311
-        - roslaunch dinova_bringup dinova.launch vicon_config_file:=configs/vicon_config_dingo1.yaml lidar:=true
+        - roslaunch dinova_bringup dinova.launch vicon_config_file:=configs/vicon_config_dingo1.yaml lidar:=false
       - shell_command:
         - ssh dinova@192.168.0.122
         - sudo systemctl stop ros.service
@@ -28,11 +28,11 @@ windows:
       - shell_command:
         - ssh dinova@192.168.0.121
         - export ROS_MASTER_URI=http://IPADDRESS:11311
-        - roslaunch dinova_fabrics_wrapper dinova_pose.launch lidar:=true with_obstacles:=true
+        - roslaunch dinova_fabrics_wrapper dinova_pose.launch lidar:=false with_obstacles:=true
       - shell_command:
         - ssh dinova@192.168.0.121
         - export ROS_MASTER_URI=http://IPADDRESS:11311
-        - roslaunch dinova_fabrics_wrapper dinova_joint_space.launch lidar:=true with_obstacles:=true
+        - roslaunch dinova_fabrics_wrapper dinova_joint_space.launch lidar:=false with_obstacles:=true
       - shell_command:
         - ssh dinova@192.168.0.122
         - export ROS_MASTER_URI=http://IPADDRESS:11311
@@ -61,7 +61,7 @@ windows:
         - ssh dinova@192.168.0.121
         - export ROS_MASTER_URI=http://IPADDRESS:11311
         - sleep 15
-        - roslaunch dinova_gomp grasp_planner.launch lidar:=true with_obstacles:=true
+        - roslaunch dinova_gomp grasp_planner.launch lidar:=false with_obstacles:=true
       - shell_command:
         - ssh dinova@192.168.0.122
         - export ROS_MASTER_URI=http://IPADDRESS:11311

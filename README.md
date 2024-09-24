@@ -26,7 +26,16 @@ Check if the correct software versions are installed, higher versions might be o
    chmod +x install_packages_complete.sh
    ./install_packages_complete.sh
    ```
-
+4. Install the necessary dependencies for the packages included in install_packages, check their respective github for instructions. For the basic version (install_packages.sh), this requires:
+   ```bash
+   pip install unified-planning[engines,plot] #for dinova_task_planner
+   sudo apt install ros-noetic-derived-object-msgs #for visualization_utils
+   ```
+5. Build the workspace:
+   ```bash
+   catkin build
+   ```
+   
 ## Steps to run the demo:
 **Note**: Unfortunately, this tmuxp-file only works currently from Ubuntu20, NOT from a Docker. We are aware of the inconvenience and hope to resolve it soon. 
 

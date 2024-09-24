@@ -13,7 +13,7 @@ Check if the correct software versions are installed, higher versions might be o
 2. Go to the src folder and clone this repo
    ```bash
    cd src
-   git clone https://github.com/INTERACT-tud-amr/erc_demo.git
+   git clone git@github.com:INTERACT-tud-amr/erc_demo.git
    ```
 3. Install the other packages required to run the demo on your laptop:
    ```bash

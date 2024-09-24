@@ -17,7 +17,7 @@ Check if the correct software versions are installed, higher versions might be o
    ```
 3. Install the other packages required to run the demo on your laptop:
    ```bash
-   cd erc_demo
+   cd erc_demo/install_packages
    chmod +x install_packages.sh
    ./install_packages.sh
    ```

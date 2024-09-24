@@ -42,9 +42,9 @@ The packages installed on the robot should be on the versions as mentioned in [i
 **Note**: Unfortunately, this tmuxp-file only works currently from Ubuntu20, NOT from a Docker. We are aware of the inconvenience and hope to resolve it soon. 
 
 In [config/](config/), template files are shown of yaml files usable for tmuxp. This eases the process of starting several terminals, by generating all terminals by running 1 command (step 3). 
-1. On your laptop: Ensure ssh into the robot without asking for a password:
+1. On your laptop: Ensure ssh into the robotS without asking for a password:
    ```bash
-   ssh-copy-id <user_on_robot>@<ip-robot> # example for dinova1: ssh-copy-id dinova@192.168.0.121
+   ssh-copy-id <user_on_robot>@<ip-robot> # E.g. for dinova1: ssh-copy-id dinova@192.168.0.121, for dinova2: ssh-copy-id dinova@192.168.0.122
    ```
 2. Install tmuxp and tmux:
    ```bash

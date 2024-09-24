@@ -21,7 +21,7 @@ Check if the correct software versions are installed, higher versions might be o
    chmod +x install_packages.sh
    ./install_packages.sh
    ```
-   or install all packages for a full workable catkin_ws:
+   or install all packages for a full workspace including all packages that are currently run on the robot (and you don't need on your laptop):
    ```bash
    chmod +x install_packages_complete.sh
    ./install_packages_complete.sh

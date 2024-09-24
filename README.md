@@ -6,7 +6,7 @@ This package contains information on running the demo of the ERC INTERACT projec
 ### On the robot:
 *** DO NOT UPDATE SOFTWARE ON THE DINOVA WITHOUT APPROVAL FROM EVERYONE IN ERC INTERACT**
 
-Check if the correct software versions are installed, higher versions might be okay, but these are the versions with which the demo is run at RSS 2024:
+All packages installed on the robot should be on the versions as mentioned in [install_packages/install_packages_complete.sh](install_packages/install_packages_complete.sh).
 
 ### On your own laptop:
 1. Create a catkin workspace on your laptop in Ubuntu20, ([instructions](http://wiki.ros.org/catkin/Tutorials/create_a_workspace))

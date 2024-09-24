@@ -13,6 +13,7 @@ Check if the correct software versions are installed, higher versions might be o
 ## Steps to run the demo:
 **Note**: Unfortunately, this tmuxp-file only works currently from Ubuntu20, NOT from a Docker. We are aware of the inconvenience and hope to resolve it soon. 
 
+Steps:
 1. On your laptop: Ensure ssh into the robot without asking for a password:
    ```bash
    ssh-copy-id <user_on_robot>@<ip-robot> # example for dinova1: ssh-copy-id dinova@192.168.0.121 #for dingo 1
@@ -23,7 +24,7 @@ Check if the correct software versions are installed, higher versions might be o
    ./replace_ip <template_file> <output_file> #example: ./replace_ip erc_demo_template.yaml erc_demo_jjohnsen
    ```
 3. Then run it 
-  ```bash
-  tmuxp load <output_file>
-  ```
+   ```bash
+   tmuxp load <output_file>
+   ```
 

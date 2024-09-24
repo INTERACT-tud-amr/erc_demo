@@ -5,8 +5,12 @@ This package contains information on running the demo of the ERC INTERACT projec
 ## Installation steps:
 ### On the robot:
 *** DO NOT UPDATE SOFTWARE ON THE DINOVA WITHOUT APPROVAL FROM EVERYONE IN ERC INTERACT**
-
-All packages installed on the robot should be on the versions as mentioned in [install_packages/install_packages_complete.sh](install_packages/install_packages_complete.sh).
+The following packages are required to be installed on the robot (under the dinova user):
+1. dinova
+2. dinova_utils
+3. dinova_motion
+4. dinova_grasp
+The packages installed on the robot should be on the versions as mentioned in [install_packages/install_packages_complete.sh](install_packages/install_packages_complete.sh).
 
 ### On your own laptop:
 1. Create a catkin workspace on your laptop in Ubuntu20, ([instructions](http://wiki.ros.org/catkin/Tutorials/create_a_workspace))

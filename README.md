@@ -11,6 +11,7 @@ The following packages are required to be installed on the robot (under the dino
 2. dinova_utils
 3. dinova_motion
 4. dinova_grasp
+   
 The packages installed on the robot should be on the versions as mentioned in [install_packages/install_packages_complete.sh](install_packages/install_packages_complete.sh).
 
 ### On your own laptop:
@@ -26,7 +27,7 @@ The packages installed on the robot should be on the versions as mentioned in [i
    chmod +x install_packages.sh
    ./install_packages.sh
    ```
-   or install all packages for a full workspace including all packages that are currently run on the robot (and you don't need on your laptop):
+   OR install all packages for a full workspace including all packages that are currently run on the robot (and you don't need on your laptop):
    ```bash
    chmod +x install_packages_complete.sh
    ./install_packages_complete.sh
@@ -44,18 +45,26 @@ The packages installed on the robot should be on the versions as mentioned in [i
 ## Steps to run the demo:
 **Note**: Unfortunately, this tmuxp-file only works currently from Ubuntu20, NOT from a Docker. We are aware of the inconvenience and hope to resolve it soon. 
 
-Steps:
+In [config/](config/), template files are shown of yaml files usable for tmuxp. This eases the process of starting several terminals, by generating all terminals by running 1 command (step 3). 
 1. On your laptop: Ensure ssh into the robot without asking for a password:
    ```bash
-   ssh-copy-id <user_on_robot>@<ip-robot> # example for dinova1: ssh-copy-id dinova@192.168.0.121 #for dingo 1
+   ssh-copy-id <user_on_robot>@<ip-robot> # example for dinova1: ssh-copy-id dinova@192.168.0.121
    ```
-2. Create the tmuxp file. This command replaces the ip address with your ip address when connected to the lab-wifi (mrl-wifi-5g).
+2. Install tmuxp and tmux:
+   ```bash
+   sudo apt install tmux
+   pip install tmuxp
+   ```
+3. Create the tmuxp file. This command replaces the ip address with your ip address when connected to the lab-wifi (mrl-wifi-5g).
    ```bash
    cd config
    ./replace_ip <template_file> <output_file> #example: ./replace_ip erc_demo_template.yaml erc_demo_jjohnsen
    ```
-3. Then run it 
+4. Then run it 
    ```bash
    tmuxp load <output_file>
    ```
-
+6. To kill all terminal, write the following in one of the terminals:
+   ```bash
+   tmux kill-server
+   ```

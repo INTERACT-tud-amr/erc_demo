@@ -20,8 +20,8 @@ Check if the correct software versions are installed, higher versions might be o
 2. Create the tmuxp file. This command replaces the ip address with your ip address when connected to the lab-wifi (mrl-wifi-5g).
    ```bash
    cd config
-  ./replace_ip <template_file> <output_file> #example: ./replace_ip erc_demo_template.yaml erc_demo_jjohnsen
-  ```
+   ./replace_ip <template_file> <output_file> #example: ./replace_ip erc_demo_template.yaml erc_demo_jjohnsen
+   ```
 3. Then run it 
   ```bash
   tmuxp load <output_file>

@@ -4,7 +4,7 @@ This package contains information on running the demo of the ERC INTERACT projec
 
 ## Installation steps:
 ### On the robot:
-*** DO NOT UPDATE SOFTWARE ON THE DINOVA WITHOUT APPROVAL FROM EVERYONE IN ERC INTERACT**
+**DO NOT UPDATE SOFTWARE ON THE DINOVA WITHOUT APPROVAL FROM EVERYONE IN ERC INTERACT**
 The following packages are required to be installed on the robot (under the dinova user):
 1. dinova
 2. dinova_utils

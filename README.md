@@ -8,7 +8,7 @@ This package contains information on running the demo of the ERC INTERACT projec
 Check if the correct software versions are installed, higher versions might be okay, but these are the versions with which the demo is run at RSS 2024:
 
 ### On your own laptop:
-
+1. Create a catkin workspace on your laptop in Ubuntu20, ([instructions](http://wiki.ros.org/catkin/Tutorials/create_a_workspace))
 
 ## Steps to run the demo:
 **Note**: Unfortunately, this tmuxp-file only works currently from Ubuntu20, NOT from a Docker. We are aware of the inconvenience and hope to resolve it soon. 

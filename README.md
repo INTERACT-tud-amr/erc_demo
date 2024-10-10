@@ -54,7 +54,14 @@ In [config/](config/), template files are shown of yaml files usable for tmuxp. 
    ```bash
    tmuxp load <output_file>
    ```
-6. To kill all terminal, write the following in one of the terminals:
+   To kill all terminals in tmux, write the following in one of the terminals:
    ```bash
    tmux kill-server
+   ```
+5. Open another TWO terminals in which to run the task planner (This is not included in the tmuxp-file yet, because it will start the robots to home). Before running the task planner, check that your joysticks are connected:
+   ```bash
+   source catkin_ws/devel/setup.zsh
+   export ROS_MASTER_URI=http://localhost:11311
+   export ROS_IP=<IPADDRESS>
+   roslaunch dinova_task_planner basic_planner_d1.launch #AND IN THE SECOND TERMINAL: roslaunch dinova_task_planner basic_planner_d2.launch
    ```

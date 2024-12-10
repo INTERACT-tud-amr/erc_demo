@@ -48,7 +48,7 @@ In [config/](config/), template files are shown of yaml files usable for tmuxp. 
 3. Create the tmuxp file. This command replaces the ip address with your ip address when connected to the lab-wifi (mrl-wifi-5g).
    ```bash
    cd config
-   ./replace_ip <template_file> <output_file> #example: ./replace_ip erc_demo_template.yaml erc_demo_jjohnsen
+   ./replace_ip <template_file> <output_file> #example: ./replace_ip erc_demo_template.yaml erc_demo_jjohnsen.yaml
    ```
 4. Then run it 
    ```bash
